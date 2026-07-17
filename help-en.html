@@ -341,7 +341,7 @@
           <tr><td><code>activeTab</code></td><td>Reads the selected text on the current tab for selection translation; nothing else on the page is read.</td></tr>
           <tr><td><code>scripting</code></td><td>Injects the scripts needed for the selection translation panel and floating ball; runs only when the user triggers it.</td></tr>
           <tr><td><code>offscreen</code></td><td>Sends translation API requests from a background offscreen document, working around MV3's network limitations on service workers.</td></tr>
-          <tr><td><code>&lt;all_urls&gt;</code> (host_permissions)</td><td>Selection translation needs the content script on every page, and several engines require cross-origin requests.</td></tr>
+          <tr><td><code>host_permissions</code></td><td>Selection translation needs the content script on every page, and several engines require cross-origin requests.</td></tr>
         </tbody>
       </table>
       <p><strong>Where your text goes:</strong> the text you translate is sent directly from your browser to the translation engine you're currently using (Built-in / Baidu / Google / Microsoft / Youdao / your custom endpoint). LingVa never handles the request itself and runs no intermediary server.</p>

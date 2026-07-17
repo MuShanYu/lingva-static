@@ -341,7 +341,7 @@
           <tr><td><code>activeTab</code></td><td>获取当前标签页的选中文字，用于划词翻译，不读取页面其他内容。</td></tr>
           <tr><td><code>scripting</code></td><td>向网页注入划词翻译与悬浮球所需的脚本，仅在用户触发时运行。</td></tr>
           <tr><td><code>offscreen</code></td><td>在后台离屏文档中发起翻译 API 请求，绕过 MV3 对 Service Worker 的网络限制。</td></tr>
-          <tr><td><code>&lt;all_urls&gt;</code> (host_permissions)</td><td>划词翻译需要在所有网页上注入内容脚本，以及向各翻译引擎 API 发起跨域请求。</td></tr>
+          <tr><td><code>host_permissions</code></td><td>划词翻译需要在所有网页上注入内容脚本，以及向各翻译引擎 API 发起跨域请求。</td></tr>
         </tbody>
       </table>
       <p><strong>翻译文本的去向：</strong>您输入的文字会直接从浏览器发送至当前使用的翻译引擎（内置翻译 / 百度 / Google / 微软 / 有道 / 您配置的自定义接口），LingVa 不经手任何翻译请求，也不设中间服务器。</p>

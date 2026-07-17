@@ -93,7 +93,7 @@
         <tr><td><code>storage</code></td><td>将设置、翻译引擎凭证、本机翻译历史保存在本机，不涉及远程存储</td></tr>
         <tr><td><code>scripting</code></td><td>向网页注入划词翻译面板与悬浮球所需的界面脚本，仅渲染 UI，不修改页面原有内容</td></tr>
         <tr><td><code>offscreen</code></td><td>Manifest V3 的后台 Service Worker 可能被系统随时终止，为避免翻译请求被中断，使用离屏文档维持网络请求直至返回结果</td></tr>
-        <tr><td>主机权限 <code>&lt;all_urls&gt;</code></td><td>划词翻译需要在任意网页生效，因此内容脚本需注入所有网址；同时部分翻译引擎与用户自定义接口需要跨域发起请求</td></tr>
+        <tr><td>主机权限 <code>host_permissions</code></td><td>划词翻译需要在任意网页生效，因此内容脚本需注入所有网址；同时部分翻译引擎与用户自定义接口需要跨域发起请求</td></tr>
       </tbody>
     </table>
 
