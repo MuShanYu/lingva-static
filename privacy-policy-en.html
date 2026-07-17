@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LingVa Privacy Policy</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>LingVa Privacy Policy</h1>
+    <div class="meta">
+      <p><strong>Effective / Last updated:</strong> 2026-07-17</p>
+      <p><strong>Product:</strong> LingVa – Privacy-First Web Translator (Chrome extension)</p>
+      <p><strong>Developer:</strong> MuShanYu</p>
+      <p><strong>Contact:</strong> <a href="mailto:mushanyu66@proton.me">mushanyu66@proton.me</a></p>
+      <p><a href="privacy-policy.html">中文</a></p>
+    </div>
+
+    <h2>1. Overview</h2>
+    <p>LingVa is a lightweight browser translation extension whose core function is to translate text you select on a webpage, or text you type into the extension's popup or floating panel.</p>
+    <p><strong>LingVa does not run any backend server, and does not collect, store, or upload any user data to the developer.</strong> This policy explains what data the extension touches while it runs, where that data goes, and what each browser permission is used for — for reference by the Chrome Web Store review team and by users.</p>
+
+    <h2>2. Data We Process</h2>
+    <table>
+      <thead>
+        <tr><th>Data type</th><th>Description</th><th>Leaves your device?</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Text to translate</td>
+          <td>Text you select on a webpage, or type into the popup / floating ball input box</td>
+          <td>Yes — sent directly from your browser to whichever translation engine you're currently using (see Section 4); LingVa itself never handles or retains it</td>
+        </tr>
+        <tr>
+          <td>Translation result</td>
+          <td>The translated text returned by the engine</td>
+          <td>No — only displayed in the UI and optionally saved to local history</td>
+        </tr>
+        <tr>
+          <td>Translation history</td>
+          <td>Recent source/translation pairs, used for the history list at the bottom of the popup</td>
+          <td>No — stored only on-device in <code>chrome.storage.local</code> / <code>localStorage</code>, never synced or uploaded</td>
+        </tr>
+        <tr>
+          <td>API keys / credentials</td>
+          <td>Third-party translation service credentials you enter yourself in Settings (Baidu App ID/Token, Google API Key, Microsoft Subscription Key, Youdao App Key/Secret, custom endpoint URL and Token)</td>
+          <td>No — stored only in local <code>chrome.storage.local</code>; read only when you initiate a translation, and used solely to call the corresponding service</td>
+        </tr>
+        <tr>
+          <td>UI preferences</td>
+          <td>Display language, font size, theme mode, whether the floating ball is shown, common target languages, etc.</td>
+          <td>No — stored locally only</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>LingVa does not collect:</strong> identity information, account information, location data, browsing history, health information, or financial information, and it does not use any analytics, tracking pixels, or third-party tracking SDKs.</p>
+
+    <h2>3. How Data Is Used</h2>
+    <p>The data above is used only to provide the core translation feature:</p>
+    <ul>
+      <li>Text to translate is sent to the translation engine you selected, to produce a translation;</li>
+      <li>Translation history, preferences, and API keys are used only to restore your usage habits and configuration on-device — not for advertising, profiling, credit assessment, or any purpose unrelated to translation;</li>
+      <li>LingVa never sells, rents, or transfers this data to any third party, and never uses it for any purpose unrelated to providing the translation service.</li>
+    </ul>
+
+    <h2>4. Third-Party Translation Services</h2>
+    <p>LingVa includes a ready-to-use built-in translation engine, and lets you optionally connect the following third-party translation services, or a custom translation endpoint:</p>
+    <ul>
+      <li>Built-in translation (based on an unofficial Google Translate endpoint)</li>
+      <li>Baidu Translate Open Platform</li>
+      <li>Google Cloud Translation API</li>
+      <li>Microsoft Azure AI Translator</li>
+      <li>Youdao Zhiyun Translate</li>
+      <li>A custom translation endpoint you configure yourself</li>
+    </ul>
+    <p>When you choose any of the engines above to translate, <strong>the text to translate is sent directly from your browser to that provider's servers</strong>, without passing through any intermediary server operated by LingVa or its developer. How each third-party service handles data is governed by its own privacy policy — please review the relevant provider's policy before use. When using a custom endpoint, data is sent to the address you configure, and how that data is handled is your own responsibility.</p>
+
+    <h2>5. Data Storage and Retention</h2>
+    <ul>
+      <li>Translation history, settings, and API keys are all stored on your device via Chrome's <code>chrome.storage.local</code> or the page's <code>localStorage</code>, and are never synced to the cloud or to a developer server.</li>
+      <li>You can clear your translation history, remove saved credentials for any translation engine, or click "Restore Defaults" to reset your preferences at any time in the extension's settings.</li>
+      <li>Uninstalling LingVa deletes all of the local data described above.</li>
+    </ul>
+
+    <h2>6. Permissions</h2>
+    <p>LingVa declares the following permissions in <code>manifest.json</code>, all of which are required to provide the translation feature:</p>
+    <table>
+      <thead>
+        <tr><th>Permission</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>activeTab</code></td><td>Reads the text you select on the current tab, in order to initiate selection translation; triggered only when you actively select text</td></tr>
+        <tr><td><code>storage</code></td><td>Saves settings, translation engine credentials, and local translation history on-device; no remote storage involved</td></tr>
+        <tr><td><code>scripting</code></td><td>Injects the UI scripts needed for the selection translation panel and floating ball; only renders UI and never modifies the page's existing content</td></tr>
+        <tr><td><code>offscreen</code></td><td>Manifest V3's background service worker can be terminated by the system at any time; an offscreen document is used to keep the network request alive until a result is returned, so translations aren't interrupted</td></tr>
+        <tr><td>Host permissions <code>host_permissions</code></td><td>Selection translation needs to work on any webpage, so the content script must be injected on all sites; some translation engines and custom endpoints also require cross-origin requests</td></tr>
+      </tbody>
+    </table>
+
+    <h2>7. Children's Privacy</h2>
+    <p>LingVa is not directed at children under 13, and does not knowingly collect personal information from children.</p>
+
+    <h2>8. Changes to This Policy</h2>
+    <p>If this policy changes due to feature updates, we will update the "Last updated" date at the top of this document and note the change in the release notes. We recommend checking back periodically for the latest version.</p>
+
+    <h2>9. Contact</h2>
+    <p>If you have any questions about this privacy policy or how your data is handled, please contact the developer at:</p>
+    <p><strong><a href="mailto:mushanyu66@proton.me">mushanyu66@proton.me</a></strong></p>
+
+    <footer>Copyright © 2026 MuShanYu. All rights reserved.</footer>
+  </div>
+</body>
+</html>
