@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LingVa User Manual</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="page-header">
+      <h1>LingVa User Manual</h1>
+      <div class="subtitle">Translate freely, explore the world · Version 1.0.0 · <a href="help.html">中文</a></div>
+    </div>
+
+    <nav class="toc">
+      <span class="toc-title">Contents</span>
+      <a href="#intro">1. Introduction</a>
+      <a href="#popup">2. Popup Translation</a>
+      <a href="#selection">3. Selection Translation</a>
+      <a href="#floatingball">4. Floating Ball</a>
+      <a href="#engines">5. Translation Engine Setup</a>
+      <a href="#permissions">6. Permissions & Privacy</a>
+      <a href="#settings">7. General Settings</a>
+    </nav>
+
+    <section id="intro">
+      <h2>1. Introduction</h2>
+      <p>LingVa is a lightweight, free, open-source Chrome translation extension that supports the following core features:</p>
+      <ul>
+        <li><strong>Popup translation</strong>: click the toolbar icon and type text in the popup to translate it.</li>
+        <li><strong>Selection translation</strong>: select any text on a webpage and click the translate button that appears.</li>
+        <li><strong>Multiple engines</strong>: a built-in, configuration-free engine works out of the box; you can also connect Baidu, Google, Microsoft, or Youdao Translate, or configure your own translation backend.</li>
+        <li><strong>Translation history</strong>: automatically keeps the last 100 translations, shared across the popup, floating ball, and selection translation entry points, along with the common-language list.</li>
+      </ul>
+      <div class="alert alert-success">
+        <span class="alert-icon">✓</span>
+        <span>The built-in engine works right after installation with zero setup. For higher usage limits or more stability, switch to a third-party engine and enter your own API credentials under Settings → Translation Engines.</span>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="popup">
+      <h2>2. Popup Translation</h2>
+      <p>Click the LingVa icon in the browser toolbar to open the translation popup.</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">Choose languages</div>
+            <div class="step-desc">Pick a source language on the left (supports "Auto Detect") and a target language on the right; translated target languages appear as quick-switch chips above the input box under "Common".</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">Enter text</div>
+            <div class="step-desc">Type or paste the text you want to translate, up to 1024 characters.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">Translate</div>
+            <div class="step-desc">Click "Translate" and the result will appear below shortly.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">Copy or re-translate</div>
+            <div class="step-desc">Click "Copy" below the result to copy it to the clipboard; the refresh icon next to it re-runs the translation with the current text.</div>
+          </div>
+        </li>
+      </ol>
+      <div class="alert alert-info">
+        <span class="alert-icon">ℹ</span>
+        <span>Translation history is shown at the bottom of the popup (entries from the floating ball and selection translation are aggregated here too). Click an entry to reload that translation, or click the close icon on the right to delete it; an empty state is shown when there's no history yet.</span>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="selection">
+      <h2>3. Selection Translation</h2>
+      <p>On any webpage, select a piece of text with your mouse (or Shift + arrow keys) to trigger selection translation.</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">Select text</div>
+            <div class="step-desc">Drag to select the text you want to translate on the page.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">Click the translate button</div>
+            <div class="step-desc">After releasing the mouse, a "Translate" button appears near the selection — click it.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">View the result</div>
+            <div class="step-desc">The translation shows in a floating panel; drag the result area to move the panel. Below it you can switch the target language, copy the result, or pin the panel with the pin icon — pinned panels stay open when you click outside them.</div>
+          </div>
+        </li>
+      </ol>
+      <p><strong>Turning it off:</strong> if you don't need this feature, enable "Disable Selection Translate" under Settings → General. Once enabled, selecting text on any page will no longer show the translate button or panel.</p>
+      <p>Successful translations are automatically added to the history at the bottom of the popup, and the chosen target language is synced to the popup's "Common" quick-switch chips.</p>
+    </section>
+
+    <hr />
+
+    <section id="floatingball">
+      <h2>4. Floating Ball</h2>
+      <p>The floating ball is a persistent shortcut in the corner of the page; clicking it opens an independent translation panel without switching back to the extension popup. Enable "Show Floating Ball" under Settings → General to make it appear on every matching page.</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">Open the panel</div>
+            <div class="step-desc">Click the floating ball to open the translation panel; click it again to minimize the panel without losing what you typed.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">Enter text</div>
+            <div class="step-desc">Type or paste text into the panel's input box; translation starts automatically after a short pause, no extra click needed.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">View the result</div>
+            <div class="step-desc">The result appears below; you can switch the target language, click the refresh icon to re-translate, or click "Copy" to copy the result.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">Move or pin the panel</div>
+            <div class="step-desc">Drag the title bar to move the panel; click the pin icon on the right of the title bar to pin it — pinned panels stay open when you click outside them.</div>
+          </div>
+        </li>
+      </ol>
+      <p>Successful translations are likewise added to the popup's history and "Common" quick-switch chips, sharing the same record with the popup and selection translation.</p>
+      <div class="alert alert-warning">
+        <span class="alert-icon">⚠</span>
+        <span>Some websites' Content Security Policy (CSP) may block the floating ball from appearing — this is expected behavior.</span>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="engines">
+      <h2>5. Translation Engine Setup</h2>
+      <p>LingVa ships with a ready-to-use built-in engine, four optional third-party engines, and a custom endpoint feature for connecting your own translation backend. All engines share one configuration UI: on Settings → Translation Engines, click an engine card to make it the active engine — only one engine is active at a time. Click "Configure" on an unconfigured engine card to expand its form; the custom endpoint is configured separately under Settings → Custom Endpoint.</p>
+
+      <h3>Built-in Translate <span class="tag tag-success">No setup needed</span> <span class="tag tag-processing">Default</span></h3>
+      <p>Powered by the Google Translate service, ready to use immediately after installation — no account or API key required. Suitable for most everyday translation needs.</p>
+      <div class="alert alert-warning">
+        <span class="alert-icon">⚠</span>
+        <span>The built-in engine uses an unofficial endpoint that Google does not guarantee, so requests may occasionally fail. For a more stable or higher-volume service, switch to one of the third-party engines below and configure your own API credentials.</span>
+      </div>
+
+      <h3>Custom Endpoint <span class="tag tag-purple">Advanced</span></h3>
+      <p>If you run your own translation service (a local LLM, a private API gateway, an enterprise translation platform, etc.), enter its URL and an optional token under Settings → Custom Endpoint. LingVa will call it following the specification below.</p>
+      <p><strong>API Specification</strong></p>
+      <table>
+        <thead><tr><th>Field</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>Method</code></td><td>POST</td></tr>
+          <tr><td><code>Content-Type</code></td><td>application/json</td></tr>
+          <tr><td><code>Auth</code></td><td>Optional; when a token is set, an Authorization: Bearer {Token} header is added automatically</td></tr>
+          <tr><td><code>Body field q</code></td><td>The original text to translate</td></tr>
+          <tr><td><code>Body field from</code></td><td>Source language BCP-47 code, "auto" when auto-detected</td></tr>
+          <tr><td><code>Body field to</code></td><td>Target language BCP-47 code, e.g. zh-Hans, en, ja</td></tr>
+          <tr><td><code>Success response</code></td><td>{ "dst": "translated text" }</td></tr>
+          <tr><td><code>Error response</code></td><td>{ "error": "error message" }</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">
+        <span class="alert-icon">ℹ</span>
+        <span>Once saved, LingVa automatically switches to the custom endpoint engine. To switch back, click "Switch" on another engine card under Settings → Translation Engines.</span>
+      </div>
+
+      <h3>Baidu Translate <span class="tag tag-blue">Generous free tier</span></h3>
+      <p>Baidu AI Open Platform offers 1,000,000 free characters per month — plenty for everyday use.</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">Create an account</div>
+            <div class="step-desc">Sign up and log in at the <a href="https://ai.baidu.com/" target="_blank" rel="noopener noreferrer">Baidu AI Open Platform</a>.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">Enable Machine Translation</div>
+            <div class="step-desc">Go to Products → Machine Translation and click "Use Now" to enable the service.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">Create an application</div>
+            <div class="step-desc">Create an app in the console, enable the "Machine Translation" capability, and get your App ID and API Key.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">Enter it into LingVa</div>
+            <div class="step-desc">Under Settings → Translation Engines → Baidu Translate → Configure, enter:<br /><code>App ID</code> — your console's <strong>App ID</strong><br /><code>Bearer Token</code> — your console's <strong>API Key</strong></div>
+          </div>
+        </li>
+      </ol>
+
+      <h3>Google Translate <span class="tag tag-green">High quality</span></h3>
+      <p>Google Cloud Translation API offers excellent translation quality, with 500,000 free characters per month and pay-as-you-go pricing beyond that.</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">Create a Google Cloud project</div>
+            <div class="step-desc">Go to the <a href="https://console.cloud.google.com/" target="_blank" rel="noopener noreferrer">Google Cloud Console</a> and create a new project (or use an existing one).</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">Enable the Translation API</div>
+            <div class="step-desc">In "APIs & Services" → "Library", search for "Cloud Translation API" and enable it.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">Create an API key</div>
+            <div class="step-desc">In "APIs & Services" → "Credentials", click "Create Credentials" → "API key" and copy the generated key.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">Enter it into LingVa</div>
+            <div class="step-desc">Under Settings → Translation Engines → Google Translate → Configure, enter the API key.</div>
+          </div>
+        </li>
+      </ol>
+      <div class="alert alert-warning">
+        <span class="alert-icon">⚠</span>
+        <span>Google Cloud requires a billing account. Consider setting a quota limit on the API key to avoid unexpected charges.</span>
+      </div>
+
+      <h3>Microsoft Translate <span class="tag tag-cyan">Generous free tier</span></h3>
+      <p>Azure AI Translator offers 2,000,000 free characters per month on the F0 free tier, with excellent quality and 100+ supported languages.</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">Create an Azure account</div>
+            <div class="step-desc">Sign up and log in at the <a href="https://portal.azure.com/" target="_blank" rel="noopener noreferrer">Azure Portal</a> (a credit card is required, but the F0 tier is free).</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">Create a Translator resource</div>
+            <div class="step-desc">Search for "Translator" under "Create a resource", choose the free F0 pricing tier (2M characters/month), pick a region (e.g. East Asia), and create it.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">Get the key and region</div>
+            <div class="step-desc">Once created, go to "Keys and Endpoint" and copy "Key 1" and the "Location/Region" value.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">Enter it into LingVa</div>
+            <div class="step-desc">Under Settings → Translation Engines → Microsoft Translate → Configure, enter:<br /><code>Subscription Key</code> — your "Key 1"<br /><code>Region</code> — your "Location/Region", e.g. <strong>eastasia</strong></div>
+          </div>
+        </li>
+      </ol>
+      <div class="alert alert-warning">
+        <span class="alert-icon">⚠</span>
+        <span>The region field must be the lowercase Azure region identifier, e.g. eastasia, eastus, westeurope — an incorrect value will cause requests to fail.</span>
+      </div>
+
+      <h3>Youdao Translate <span class="tag tag-red">Broad language support</span></h3>
+      <p>Youdao Zhiyun's Text Translation API supports 100+ language pairs, with a free trial quota for new accounts.</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">Create an account</div>
+            <div class="step-desc">Sign up and log in at the <a href="https://ai.youdao.com/" target="_blank" rel="noopener noreferrer">Youdao Zhiyun Open Platform</a>.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">Enable Text Translation</div>
+            <div class="step-desc">Go to "NLP Translation" → "Text Translation", click "Use Now" to enable it, and top up a trial or paid package.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">Create an application</div>
+            <div class="step-desc">In the console's "Application Management", create a new app bound to "Text Translation" and get your App Key and App Secret.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">Enter it into LingVa</div>
+            <div class="step-desc">Under Settings → Translation Engines → Youdao Translate → Configure, enter:<br /><code>App Key</code> and <code>App Secret</code> (both from Application Management)</div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <hr />
+
+    <section id="permissions">
+      <h2>6. Permissions & Privacy</h2>
+      <p>LingVa does not collect, store, or upload any personal data. Chrome shows the required permissions at install time; here's what each one is for:</p>
+      <table>
+        <thead><tr><th>Permission</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>storage</code></td><td>Stores API keys, translation history, and preferences on-device — no remote storage involved.</td></tr>
+          <tr><td><code>activeTab</code></td><td>Reads the selected text on the current tab for selection translation; nothing else on the page is read.</td></tr>
+          <tr><td><code>scripting</code></td><td>Injects the scripts needed for the selection translation panel and floating ball; runs only when the user triggers it.</td></tr>
+          <tr><td><code>offscreen</code></td><td>Sends translation API requests from a background offscreen document, working around MV3's network limitations on service workers.</td></tr>
+          <tr><td><code>&lt;all_urls&gt;</code> (host_permissions)</td><td>Selection translation needs the content script on every page, and several engines require cross-origin requests.</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Where your text goes:</strong> the text you translate is sent directly from your browser to the translation engine you're currently using (Built-in / Baidu / Google / Microsoft / Youdao / your custom endpoint). LingVa never handles the request itself and runs no intermediary server.</p>
+      <div class="alert alert-info">
+        <span class="alert-icon">ℹ</span>
+        <span>You can inspect all of the extension's network requests and source code yourself via Chrome DevTools (F12 → Network / Sources) — no need to take any claim on faith.</span>
+      </div>
+      <p>See the full <a href="privacy-policy.html">Privacy Policy</a> for details on data handling.</p>
+    </section>
+
+    <hr />
+
+    <section id="settings">
+      <h2>7. General Settings</h2>
+      <table>
+        <thead><tr><th>Setting</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Display Language</strong></td><td>Switches the extension's UI language; Chinese and English are currently supported.</td></tr>
+          <tr><td><strong>Font Size</strong></td><td>Drag the slider to continuously adjust the translation result's font size between 12–20px.</td></tr>
+          <tr><td><strong>Disable Selection Translate</strong></td><td>When enabled, selecting text on any page no longer shows the translate button or panel.</td></tr>
+          <tr><td><strong>Show Floating Ball</strong></td><td>Keeps a floating ball in the corner of the page for quickly opening an independent translation panel.</td></tr>
+          <tr><td><strong>Theme Mode</strong></td><td>Follow system / Light / Dark — controls the color scheme of the popup and floating panels.</td></tr>
+          <tr><td><strong>Reset to Defaults</strong></td><td>Resets display language, font size, Disable Selection Translate, Show Floating Ball, and theme mode to their default values in one click.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>Copyright © 2026 MuShanYu. All rights reserved.</footer>
+  </div>
+</body>
+</html>

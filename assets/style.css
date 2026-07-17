@@ -1,0 +1,346 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f5f5f5;
+  --card-bg: #ffffff;
+  --text: rgba(0, 0, 0, 0.88);
+  --text-secondary: #595959;
+  --text-tertiary: #8c8c8c;
+  --border: #f0f0f0;
+  --table-head: #fafafa;
+  --link: #1677ff;
+  --success-bg: #f6ffed;
+  --success-border: #b7eb8f;
+  --success-text: #389e0d;
+  --info-bg: #e6f4ff;
+  --info-border: #91caff;
+  --info-text: #0958d9;
+  --warning-bg: #fffbe6;
+  --warning-border: #ffe58f;
+  --warning-text: #ad6800;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141414;
+    --card-bg: #1f1f1f;
+    --text: rgba(255, 255, 255, 0.88);
+    --text-secondary: #a6a6a6;
+    --text-tertiary: #8c8c8c;
+    --border: #303030;
+    --table-head: #262626;
+    --link: #4096ff;
+    --success-bg: #162312;
+    --success-border: #274916;
+    --success-text: #95de64;
+    --info-bg: #111a2c;
+    --info-border: #15325b;
+    --info-text: #69b1ff;
+    --warning-bg: #2b2111;
+    --warning-border: #594214;
+    --warning-text: #ffd666;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 40px 16px;
+}
+.card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 48px 56px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+h1 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+h2 {
+  font-size: 20px;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+h3 {
+  font-size: 16px;
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.meta {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+.meta p {
+  margin: 4px 0;
+}
+p {
+  margin: 12px 0;
+}
+ul {
+  padding-left: 20px;
+}
+li {
+  margin: 6px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: var(--table-head);
+}
+code {
+  background: var(--table-head);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+a {
+  color: var(--link);
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* 页头 */
+.page-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.page-header .subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+/* 目录 */
+.toc {
+  background: var(--table-head);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 28px;
+  margin-bottom: 48px;
+}
+.toc .toc-title {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.toc a {
+  display: block;
+  margin-bottom: 6px;
+  text-decoration: none;
+}
+.toc a:hover {
+  text-decoration: underline;
+}
+
+/* 章节 */
+section {
+  margin-bottom: 48px;
+}
+
+/* 标签 */
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 8px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+.tag-success {
+  color: var(--success-text);
+  background: var(--success-bg);
+  border-color: var(--success-border);
+}
+.tag-processing {
+  color: var(--info-text);
+  background: var(--info-bg);
+  border-color: var(--info-border);
+}
+.tag-purple {
+  color: #9254de;
+  background: #f9f0ff;
+  border-color: #d3adf7;
+}
+.tag-blue {
+  color: #1677ff;
+  background: #e6f4ff;
+  border-color: #91caff;
+}
+.tag-green {
+  color: #389e0d;
+  background: #f6ffed;
+  border-color: #b7eb8f;
+}
+.tag-cyan {
+  color: #08979c;
+  background: #e6fffb;
+  border-color: #87e8de;
+}
+.tag-red {
+  color: #cf1322;
+  background: #fff1f0;
+  border-color: #ffa39e;
+}
+@media (prefers-color-scheme: dark) {
+  .tag-purple {
+    color: #d3adf7;
+    background: #2a1438;
+    border-color: #51258f;
+  }
+  .tag-blue {
+    color: #91caff;
+    background: #111a2c;
+    border-color: #15325b;
+  }
+  .tag-green {
+    color: #95de64;
+    background: #162312;
+    border-color: #274916;
+  }
+  .tag-cyan {
+    color: #87e8de;
+    background: #112123;
+    border-color: #144848;
+  }
+  .tag-red {
+    color: #ffa39e;
+    background: #2a1215;
+    border-color: #58181c;
+  }
+}
+
+/* 提示条 */
+.alert {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  margin: 16px 0;
+}
+.alert .alert-icon {
+  flex-shrink: 0;
+}
+.alert-info {
+  background: var(--info-bg);
+  border-color: var(--info-border);
+  color: var(--info-text);
+}
+.alert-success {
+  background: var(--success-bg);
+  border-color: var(--success-border);
+  color: var(--success-text);
+}
+.alert-warning {
+  background: var(--warning-bg);
+  border-color: var(--warning-border);
+  color: var(--warning-text);
+}
+
+/* 步骤 */
+.steps {
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+}
+.step-item {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.step-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 26px;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+.step-index {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--link);
+  color: var(--link);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+.step-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.step-desc {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* 首页导航 */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+}
+.nav-list li {
+  margin: 0 0 12px;
+}
+.nav-card {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: var(--text);
+}
+.nav-card:hover {
+  border-color: var(--link);
+}
+.nav-card .nav-card-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.nav-card .nav-card-desc {
+  color: var(--text-secondary);
+  font-size: 13px;
+}

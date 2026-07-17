@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LingVa 使用手册</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="page-header">
+      <h1>LingVa 使用手册</h1>
+      <div class="subtitle">轻松翻译，自由探索 · 版本 1.0.0 · <a href="help-en.html">English</a></div>
+    </div>
+
+    <nav class="toc">
+      <span class="toc-title">目录</span>
+      <a href="#intro">1. 产品介绍</a>
+      <a href="#popup">2. 弹窗翻译</a>
+      <a href="#selection">3. 划词翻译</a>
+      <a href="#floatingball">4. 悬浮球</a>
+      <a href="#engines">5. 翻译引擎配置</a>
+      <a href="#permissions">6. 权限与隐私说明</a>
+      <a href="#settings">7. 常规设置说明</a>
+    </nav>
+
+    <section id="intro">
+      <h2>1. 产品介绍</h2>
+      <p>LingVa 是一款轻量、免费、开源的 Chrome 浏览器翻译插件，支持以下核心功能：</p>
+      <ul>
+        <li><strong>弹窗翻译</strong>：点击工具栏图标，在弹窗中输入文字进行翻译。</li>
+        <li><strong>划词翻译</strong>：在任意网页选中文字，点击浮出的翻译按钮即可。</li>
+        <li><strong>多引擎支持</strong>：内置免配置翻译引擎，开箱即用；也可接入百度翻译、Google 翻译、微软翻译、有道翻译，或配置自己的翻译后台接口。</li>
+        <li><strong>翻译历史</strong>：自动保存最近 100 条翻译记录，弹窗、悬浮球、划词翻译三个入口共用同一份历史与常用语言列表。</li>
+      </ul>
+      <div class="alert alert-success">
+        <span class="alert-icon">✓</span>
+        <span>内置翻译引擎开箱即用，无需任何配置，安装后直接使用。如需更高用量或更稳定的服务，可在「设置 → 翻译引擎」中切换至第三方引擎并填入 API 凭证。</span>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="popup">
+      <h2>2. 弹窗翻译</h2>
+      <p>点击浏览器工具栏右上角的 LingVa 图标，即可打开翻译弹窗。</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">选择语言</div>
+            <div class="step-desc">左侧下拉框选择源语言（支持「自动检测」），右侧选择目标语言；翻译过的目标语言会出现在输入框上方的「常用语言」快捷按钮中，点击即可快速切换。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">输入文字</div>
+            <div class="step-desc">在文本框中输入或粘贴需要翻译的内容，最长 1024 个字符。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">点击翻译</div>
+            <div class="step-desc">点击「翻译」按钮，稍等片刻即可在下方看到翻译结果。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">复制或重新翻译</div>
+            <div class="step-desc">点击结果区域下方的「复制」按钮，将翻译内容复制到剪切板；旁边的刷新图标可用当前文本重新发起一次翻译。</div>
+          </div>
+        </li>
+      </ol>
+      <div class="alert alert-info">
+        <span class="alert-icon">ℹ</span>
+        <span>翻译历史记录会在弹窗底部展示（悬浮球、划词翻译产生的记录也会一并汇总在这里），点击每条记录可重新加载该次翻译，点击右侧的关闭图标可删除单条记录；暂无记录时会显示空状态提示。</span>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="selection">
+      <h2>3. 划词翻译</h2>
+      <p>在任意网页上，用鼠标选中一段文字（或用键盘 Shift + 方向键选中），即可触发划词翻译功能。</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">选中文字</div>
+            <div class="step-desc">在网页上拖拽鼠标选中需要翻译的文字。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">点击翻译按钮</div>
+            <div class="step-desc">松开鼠标后，选中文字附近会浮现「翻译」按钮，点击即可。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">查看结果</div>
+            <div class="step-desc">翻译结果显示在浮动面板中，按住结果文字区域可拖拽移动面板位置；面板下方可切换目标语言、复制结果，点击图钉图标可将面板钉住，钉住后点击面板外部不会自动关闭。</div>
+          </div>
+        </li>
+      </ol>
+      <p><strong>关闭划词翻译：</strong>如果不需要该功能，可在「设置 → 常规设置」中开启「禁用划词翻译」，开启后在任意网页选中文字将不再弹出翻译按钮或翻译面板。</p>
+      <p>翻译成功后会自动计入弹窗底部的翻译历史，所选目标语言也会同步更新到弹窗的「常用语言」快捷按钮中。</p>
+    </section>
+
+    <hr />
+
+    <section id="floatingball">
+      <h2>4. 悬浮球</h2>
+      <p>悬浮球是一个常驻在网页角落的快捷入口，点击后可打开独立翻译面板，无需切换回插件弹窗即可翻译。在「设置 → 常规设置」中开启「显示悬浮翻译球」，悬浮球将出现在所有匹配的网页上。</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">打开面板</div>
+            <div class="step-desc">点击悬浮球打开翻译面板；再次点击悬浮球会将面板最小化，已输入的内容不会丢失。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">输入文字</div>
+            <div class="step-desc">在面板的输入框中输入或粘贴文字，停顿片刻后自动发起翻译，无需额外点击。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">查看结果</div>
+            <div class="step-desc">翻译结果显示在下方结果区域，可切换目标语言、点击刷新图标重新翻译、点击「复制」按钮复制结果。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">移动或钉住面板</div>
+            <div class="step-desc">按住标题栏可拖拽移动面板位置；点击标题栏右侧的图钉图标可将面板钉住，钉住后点击面板外部不会自动关闭。</div>
+          </div>
+        </li>
+      </ol>
+      <p>翻译成功后同样会计入弹窗底部的翻译历史与「常用语言」快捷按钮，与弹窗、划词翻译共用同一份记录。</p>
+      <div class="alert alert-warning">
+        <span class="alert-icon">⚠</span>
+        <span>部分网站的内容安全策略（CSP）可能阻止悬浮球显示，属正常现象。</span>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="engines">
+      <h2>5. 翻译引擎配置</h2>
+      <p>LingVa 提供一个开箱即用的内置翻译引擎、四个可选的第三方引擎，以及自定义接口功能，支持接入您自己的翻译后台服务。所有引擎共用同一套配置界面：在「设置 → 翻译引擎」页面直接点击引擎卡片即可切换为当前使用的引擎，同一时间只有一个引擎生效；未配置的引擎点击卡片上的「设置」按钮展开配置表单，自定义接口则在「设置 → 自定义接口」页面单独配置。</p>
+
+      <h3>内置翻译 <span class="tag tag-success">无需配置</span> <span class="tag tag-processing">默认</span></h3>
+      <p>基于 Google 翻译服务，安装后开箱即用，无需注册账号或填写任何 API 密钥。适合绝大多数日常翻译场景。</p>
+      <div class="alert alert-warning">
+        <span class="alert-icon">⚠</span>
+        <span>内置翻译使用非官方接口，Google 未对其提供稳定性保证，在极少数情况下可能出现请求失败。如需更稳定或更高用量的服务，建议切换至下方任意第三方引擎并配置 API 凭证。</span>
+      </div>
+
+      <h3>自定义接口 <span class="tag tag-purple">高级功能</span></h3>
+      <p>如果您有自建翻译服务（本地 LLM、私有 API 网关、企业翻译平台等），可以在「设置 → 自定义接口」中填入接口地址和可选的 Token，LingVa 将按照以下协议规范向该地址发起翻译请求。</p>
+      <p><strong>接口规范</strong></p>
+      <table>
+        <thead><tr><th>项目</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td><code>请求方法</code></td><td>POST</td></tr>
+          <tr><td><code>Content-Type</code></td><td>application/json</td></tr>
+          <tr><td><code>认证方式</code></td><td>可选；填写 Token 后自动附加 Authorization: Bearer {Token} 请求头</td></tr>
+          <tr><td><code>请求体字段 q</code></td><td>待翻译的原始文本</td></tr>
+          <tr><td><code>请求体字段 from</code></td><td>源语言 BCP-47 代码，自动检测时值为 "auto"</td></tr>
+          <tr><td><code>请求体字段 to</code></td><td>目标语言 BCP-47 代码，如 zh-Hans、en、ja</td></tr>
+          <tr><td><code>成功响应</code></td><td>{ "dst": "翻译结果" }</td></tr>
+          <tr><td><code>错误响应</code></td><td>{ "error": "错误说明" }</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">
+        <span class="alert-icon">ℹ</span>
+        <span>保存配置后，LingVa 会自动切换为自定义接口引擎。如需切回其他引擎，在「设置 → 翻译引擎」中点击「切换」即可。</span>
+      </div>
+
+      <h3>百度翻译 <span class="tag tag-blue">免费额度充足</span></h3>
+      <p>百度 AI 开放平台提供每月 100 万字符的免费翻译额度，适合日常使用。</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">注册账号</div>
+            <div class="step-desc">前往 <a href="https://ai.baidu.com/" target="_blank" rel="noopener noreferrer">百度 AI 开放平台</a> 注册并登录。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">开通机器翻译服务</div>
+            <div class="step-desc">进入「产品服务」→「机器翻译」，点击「立即使用」开通服务。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">创建应用</div>
+            <div class="step-desc">在控制台创建一个应用，勾选「机器翻译」能力，提交后获得 App ID 和 API Key。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">填入插件</div>
+            <div class="step-desc">在 LingVa「设置 → 翻译引擎 → 百度翻译 → 设置」中填入：<br /><code>App ID</code> 对应控制台的 <strong>App ID</strong><br /><code>Bearer Token</code> 对应控制台的 <strong>API Key</strong></div>
+          </div>
+        </li>
+      </ol>
+
+      <h3>Google 翻译 <span class="tag tag-green">翻译质量高</span></h3>
+      <p>Google Cloud Translation API 翻译质量优秀，每月提供 50 万字符免费额度，超出后按量计费。</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">创建 Google Cloud 项目</div>
+            <div class="step-desc">前往 <a href="https://console.cloud.google.com/" target="_blank" rel="noopener noreferrer">Google Cloud Console</a>，创建一个新项目（或使用已有项目）。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">启用 Translation API</div>
+            <div class="step-desc">在「API 和服务」→「库」中搜索「Cloud Translation API」并启用。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">创建 API 密钥</div>
+            <div class="step-desc">进入「API 和服务」→「凭据」，点击「创建凭据」→「API 密钥」，复制生成的密钥。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">填入插件</div>
+            <div class="step-desc">在 LingVa「设置 → 翻译引擎 → Google 翻译 → 设置」中填入 API 密钥。</div>
+          </div>
+        </li>
+      </ol>
+      <div class="alert alert-warning">
+        <span class="alert-icon">⚠</span>
+        <span>使用 Google Cloud 需绑定付款方式。建议在 API 密钥上设置配额限制，防止意外超额计费。</span>
+      </div>
+
+      <h3>微软翻译 <span class="tag tag-cyan">免费额度充足</span></h3>
+      <p>Azure AI 翻译服务每月提供 200 万字符的免费翻译额度（F0 免费层），翻译质量优秀，支持 100+ 语言。</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">注册 Azure 账号</div>
+            <div class="step-desc">前往 <a href="https://portal.azure.com/" target="_blank" rel="noopener noreferrer">Azure 门户</a> 注册并登录（需绑定信用卡，F0 层不收费）。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">创建 Translator 资源</div>
+            <div class="step-desc">在「创建资源」中搜索「Translator」，选择免费定价层 F0（2M 字符/月），选择区域（如 East Asia）后创建。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">获取密钥和区域</div>
+            <div class="step-desc">资源创建完成后，进入「密钥和终结点」页面，复制「密钥 1」和「位置/区域」字段。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">填入插件</div>
+            <div class="step-desc">在 LingVa「设置 → 翻译引擎 → 微软翻译 → 设置」中填入：<br /><code>Subscription Key</code> 对应「密钥 1」<br /><code>Region</code> 对应「位置/区域」，如 <strong>eastasia</strong></div>
+          </div>
+        </li>
+      </ol>
+      <div class="alert alert-warning">
+        <span class="alert-icon">⚠</span>
+        <span>区域字段须填写 Azure 区域标识符（英文小写），例如 eastasia、eastus、westeurope，填写错误将导致请求失败。</span>
+      </div>
+
+      <h3>有道翻译 <span class="tag tag-red">支持多语言</span></h3>
+      <p>有道智云文本翻译 API 支持 100+ 语种互译，新注册用户享有免费体验额度。</p>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-index">1</span>
+          <div>
+            <div class="step-title">注册账号</div>
+            <div class="step-desc">前往 <a href="https://ai.youdao.com/" target="_blank" rel="noopener noreferrer">有道智云开放平台</a> 注册并登录。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">2</span>
+          <div>
+            <div class="step-title">开通文本翻译服务</div>
+            <div class="step-desc">进入「自然语言翻译」→「文本翻译」，点击「立即使用」开通服务并充值体验包（或购买）。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">3</span>
+          <div>
+            <div class="step-title">创建应用</div>
+            <div class="step-desc">在控制台「应用管理」中创建新应用，绑定「文本翻译」服务，提交后获得 App Key 和 App Secret。</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-index">4</span>
+          <div>
+            <div class="step-title">填入插件</div>
+            <div class="step-desc">在 LingVa「设置 → 翻译引擎 → 有道翻译 → 设置」中填入：<br /><code>App Key</code> 和 <code>App Secret</code>（均来自应用管理页面）</div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <hr />
+
+    <section id="permissions">
+      <h2>6. 权限与隐私说明</h2>
+      <p>LingVa 本身不收集、不存储、不上传任何个人数据。安装时 Chrome 会展示所需权限，以下逐项说明用途：</p>
+      <table>
+        <thead><tr><th>权限</th><th>用途</th></tr></thead>
+        <tbody>
+          <tr><td><code>storage</code></td><td>将 API 密钥、翻译历史、偏好设置保存在本机，不涉及任何远程存储。</td></tr>
+          <tr><td><code>activeTab</code></td><td>获取当前标签页的选中文字，用于划词翻译，不读取页面其他内容。</td></tr>
+          <tr><td><code>scripting</code></td><td>向网页注入划词翻译与悬浮球所需的脚本，仅在用户触发时运行。</td></tr>
+          <tr><td><code>offscreen</code></td><td>在后台离屏文档中发起翻译 API 请求，绕过 MV3 对 Service Worker 的网络限制。</td></tr>
+          <tr><td><code>&lt;all_urls&gt;</code> (host_permissions)</td><td>划词翻译需要在所有网页上注入内容脚本，以及向各翻译引擎 API 发起跨域请求。</td></tr>
+        </tbody>
+      </table>
+      <p><strong>翻译文本的去向：</strong>您输入的文字会直接从浏览器发送至当前使用的翻译引擎（内置翻译 / 百度 / Google / 微软 / 有道 / 您配置的自定义接口），LingVa 不经手任何翻译请求，也不设中间服务器。</p>
+      <div class="alert alert-info">
+        <span class="alert-icon">ℹ</span>
+        <span>您可以通过 Chrome 扩展开发者工具（F12 → Network / Sources）自行审查插件的全部网络请求与源码，无需信任任何承诺。</span>
+      </div>
+      <p>完整的数据处理说明请参阅 <a href="privacy-policy.html">隐私权政策</a>。</p>
+    </section>
+
+    <hr />
+
+    <section id="settings">
+      <h2>7. 常规设置说明</h2>
+      <table>
+        <thead><tr><th>设置项</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td><strong>显示语言</strong></td><td>切换插件界面语言，目前支持中文和英文。</td></tr>
+          <tr><td><strong>字体大小</strong></td><td>拖动滑块在 12–20px 范围内连续调整翻译结果的字体大小。</td></tr>
+          <tr><td><strong>禁用划词翻译</strong></td><td>开启后，在任意网页选中文字将不再弹出翻译按钮或翻译面板。</td></tr>
+          <tr><td><strong>显示悬浮翻译球</strong></td><td>在浏览器网页角落常驻一个悬浮球，点击可快速打开独立翻译面板。</td></tr>
+          <tr><td><strong>主题模式</strong></td><td>跟随系统 / 浅色 / 深色，控制插件弹窗及浮动面板的配色方案。</td></tr>
+          <tr><td><strong>恢复默认设置</strong></td><td>一键将显示语言、字体大小、禁用划词翻译、显示悬浮翻译球、主题模式恢复为默认值。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>Copyright © 2026 MuShanYu. All rights reserved.</footer>
+  </div>
+</body>
+</html>
